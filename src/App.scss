@@ -1,0 +1,28 @@
+// ==== side bar ====
+.side-menu-wrapper {
+    width: 200px;
+    min-height: 100vh;
+    background: #FFF;
+    color: #fff;
+    position: fixed;
+    margin-left: -200px;
+    box-shadow: 2px 2px 2px -2px gray;
+    transition: all 0.3s;
+    z-index: 2050;
+}
+
+.page-wrapper {
+    width: 100%;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.side-menu-wrapper.show {
+    margin-left: 0px;
+}
+
+.navbar {
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+}

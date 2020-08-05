@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {connect} from 'react-redux';
+import MainLayout from './layouts/MainLayout';
+import Home from './components/HomeComponent';
+import Men from './containers/pages/Men';
+import Women from './containers/pages/Women';
+import { Switch, Route, Redirect, withRouter} from 'react-router-dom';
+import { toogleSideBar } from './store/actions/actionCreators'
+import './App.scss';
 
-function App() {
+const App = (props) => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Prove
-        </a>
-      </header>
+
+      <MainLayout
+        toogleSideBar={props.toogleSideBar}
+        showSideNavigation={props.showSideNavigation}>
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route exact path="/men" component={Men} />
+          <Route exact path="/women" component={Women} />
+          <Redirect to="/home" />
+        </Switch>
+      </MainLayout>
+
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    showSideNavigation: state.showSideNavigation
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    toogleSideBar: () => dispatch(toogleSideBar())
+  }
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
