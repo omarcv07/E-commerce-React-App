@@ -4,6 +4,7 @@ import MainWrapper from '../components/wrappers/MainPageWrapper';
 import ContentWrapper from '../components/wrappers/MainPageWrapper';
 import SideMenuWrapper from "../components/wrappers/SideMenuWrapper";
 import SideBar from '../components/MenusElement/SideMenu'
+import FadeEffect from '../components/UI/Fade/Fade'
 
 const MainLayout = (props) => {
     return (
@@ -18,7 +19,9 @@ const MainLayout = (props) => {
                     <header>
                         <Header toogleSideBar={props.toogleSideBar} />
                     </header>
-                    {props.children}
+                    <main>
+                        {props.children}
+                    </main>
                 </ContentWrapper>
             </MainWrapper>
         </Fragment>

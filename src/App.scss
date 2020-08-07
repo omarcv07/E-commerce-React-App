@@ -1,3 +1,20 @@
+// ==== general styles ====
+$nav-item-bg: #e40046;
+$color-pink: #e40046;
+
+.page-wrapper {
+    width: 100%;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.left-column {
+    background: #FFF;
+    box-shadow: 2px 2px 2px -2px grey;
+}
+
 // ==== side bar ====
 .side-menu-wrapper {
     width: 200px;
@@ -9,20 +26,72 @@
     box-shadow: 2px 2px 2px -2px gray;
     transition: all 0.3s;
     z-index: 2050;
-}
 
-.page-wrapper {
-    width: 100%;
-    transition: all 0.3s;
-    position: absolute;
-    top: 0;
-    right: 0;
+    .navbar-brand {
+        color: $nav-item-bg !important;
+    }
+
+    .nav-link {
+        color: #a0a0a0 !important;
+        font-size: 17px;
+    }
 }
 
 .side-menu-wrapper.show {
     margin-left: 0px;
 }
 
+@media (min-width: 768px) {
+    .side-menu-wrapper {
+        margin-left: -200px;
+    }
+
+    .side-menu-wrapper.show {
+        margin-left: -200px;
+    }
+}
+
+// ==== navigation bar ===
 .navbar {
     box-shadow: 0 1px 6px rgba(57,73,76,.35);
+    background: #0f3052 !important;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.nav-link {
+    color: #e2e2e2 !important;
+    font-size: 17px;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, 
+.navbar-dark .navbar-nav .nav-link.active, 
+.navbar-dark .navbar-nav .nav-link.show, 
+.navbar-dark .navbar-nav .show>.nav-link {
+    background: $nav-item-bg;
+    color: #fff !important;
+}
+
+.nav .nav-item .nav-link.active {
+    background-color: $nav-item-bg;
+    color: #FFFFFF !important;
+}
+
+// === left column === 
+.left-column-layout {
+    background: #FFF;
+    box-shadow: 0px 0px 1px 0px grey;
+
+    h5 {
+        color: darkorange;
+    }
+
+    .discount {
+        color: $color-pink!important;
+        font-size: 17px;
+    }
 }

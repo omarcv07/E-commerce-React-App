@@ -6,6 +6,7 @@ const SideBar = (props) => {
     return (
         <Fragment>
             <MenuFather menuClasses="nav flex-column">
+                <span className="navbar-brand justify-content-center d-flex" href="/">Brawels</span> 
                 <MenuComponent />
             </MenuFather>
         </Fragment>

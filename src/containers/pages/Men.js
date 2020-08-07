@@ -1,9 +1,12 @@
 import React from 'react';
+import SecondaryLayout from '../../layouts/SecondaryLayout';
 
 const Men = (props) => {
     return (
         <div>
-            Men
+            <SecondaryLayout>
+                Men
+            </SecondaryLayout>
         </div>
     );
 }

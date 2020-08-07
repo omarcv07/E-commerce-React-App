@@ -6,13 +6,13 @@ import MenuFather from '../UI/Menu/MenuFather';
 const Header = (props) => {
 
     return (
-        <nav className="navbar navbar-expand-md navbar-light">
+        <nav className="navbar navbar-expand-md navbar-dark p-3">
             <span className="navbar-brand" href="/">Brawels</span>
 
             <button 
                 className="navbar-toggler"
                 onClick={props.toogleSideBar}>
-                <span className="navbar-toggler-icon"></span>
+                <i className="navbar-toggler-icon"></i>
             </button>
 
             <div className={"collapse navbar-collapse"}>
