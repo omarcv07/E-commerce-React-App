@@ -7,6 +7,7 @@ const MenuComponent = () => {
             <MenuItem linkTo={'/home'}>Home</MenuItem>
             <MenuItem linkTo={'/men'}>Men</MenuItem>
             <MenuItem linkTo={'/women'}>Women</MenuItem>
+            <MenuItem linkTo={'/kids'}>Kids</MenuItem>
         </Fragment>
     );
 }

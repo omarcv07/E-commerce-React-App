@@ -4,7 +4,7 @@ import MainWrapper from '../components/wrappers/MainPageWrapper';
 import ContentWrapper from '../components/wrappers/MainPageWrapper';
 import SideMenuWrapper from "../components/wrappers/SideMenuWrapper";
 import SideBar from '../components/MenusElement/SideMenu'
-import FadeEffect from '../components/UI/Fade/Fade'
+import Footer from '../components/Footer'
 
 const MainLayout = (props) => {
     return (
@@ -22,6 +22,9 @@ const MainLayout = (props) => {
                     <main>
                         {props.children}
                     </main>
+                    <footer>
+                        <Footer />
+                    </footer>
                 </ContentWrapper>
             </MainWrapper>
         </Fragment>

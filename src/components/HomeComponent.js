@@ -1,11 +1,38 @@
 import React from 'react';
+import EmptyCategoryPage from './EmptyCategoryPage'
+import { connect } from 'react-redux'; 
+import SecondaryLayout from '../layouts/SecondaryLayout'
+import ProductCard from './ProductCard'
 
-const Home = () => {
+const Home = (props) => {
+    let products = <EmptyCategoryPage />
+
+
+    if (props.productsProps.length > 0) {
+        products = props.productsProps.map(product => {
+            return (
+                <ProductCard
+                    key={product.key}
+                    productImage={product.img}
+                    productName={product.name}
+                    productSale={product.sale}
+                    productPrice={product.price}
+                />
+            );
+        })
+    } 
     return (
-        <div>
-            Home
-        </div>
+        <SecondaryLayout>
+            {products}
+        </SecondaryLayout>
     );
 }
 
-export default Home;
+
+const mapStateToProps = state => {
+    return {
+        productsProps: state.products
+    };
+}
+
+export default connect(mapStateToProps)(Home);

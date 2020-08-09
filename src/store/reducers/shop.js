@@ -8,11 +8,11 @@ const initialState = {
     ProductCode: [
         {
             code: 'TENPERCENT',
-            percetange: 10
+            percentage: 10
         },
         {
             code: 'FIVEPERCENT',
-            percetange: 5
+            percentage: 5
         }
     ],
     products: [
@@ -242,12 +242,6 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 showSideNavigation: !state.showSideNavigation
-            };
-
-        case actionTypes.PROMO_CODE: 
-            return {
-                ...state,
-
             };
         
         default:

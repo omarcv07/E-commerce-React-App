@@ -1,5 +1,5 @@
 import React from 'react';
-import LeftColumn from '../components/LeftColumn'
+import LeftColumn from '../components/LeftColumn';
 
 const SecondaryLayout = ({ children }) => {
     return (
@@ -8,8 +8,10 @@ const SecondaryLayout = ({ children }) => {
                 <div className="col-12 col-md-4 col-lg-3">
                     <LeftColumn />
                 </div>
-                <div className="col-12 col-md-8 col-lg-4">
-                    {children}
+                <div className="col-12 col-md-8 col-lg-9">
+                    <div className="row justify-content-center">
+                        {children}
+                    </div>
                 </div>
             </div>
         </div>

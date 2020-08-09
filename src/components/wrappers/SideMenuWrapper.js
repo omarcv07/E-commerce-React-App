@@ -1,11 +1,11 @@
 import React from 'react';
 
-const SideMenuWrapper = (props) => {
+const SideMenuWrapper = ({ showSideBar, toogleSideMenu, children}) => {
     return (
             <div
-                className={`side-menu-wrapper ${props.showSideBar ? 'show' : 'hide'}`}
-                onClick={props.toogleSideMenu}>
-                {props.children}
+                className={`side-menu-wrapper ${showSideBar ? 'show' : 'hide'}`}
+                onClick={toogleSideMenu}>
+                {children}
             </div>
     );
 }

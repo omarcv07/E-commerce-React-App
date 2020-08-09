@@ -1,10 +1,10 @@
 import React from 'react';
-import SecondaryLayout from '../../layouts/SecondaryLayout';
-import { connect } from 'react-redux'; 
 import EmptyCategoryPage from '../../components/EmptyCategoryPage'
+import { connect } from 'react-redux'; 
+import SecondaryLayout from '../../layouts/SecondaryLayout'
 import ProductCard from '../../components/ProductCard'
 
-const Men = (props) => {
+const Kids = (props) => {
     let products = <EmptyCategoryPage />
 
 
@@ -30,8 +30,8 @@ const Men = (props) => {
 
 const mapStateToProps = state => {
     return {
-        productsProps: state.products.filter(product => product.category === 'men')
-    };
+        productsProps: state.products.filter(product => product.category === 'kids')
+    }
 }
 
-export default connect(mapStateToProps)(Men);
+export default connect(mapStateToProps)(Kids);

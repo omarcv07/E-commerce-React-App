@@ -2,6 +2,11 @@
 $nav-item-bg: #e40046;
 $color-pink: #e40046;
 
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
+
 .page-wrapper {
     width: 100%;
     transition: all 0.3s;
@@ -54,7 +59,8 @@ $color-pink: #e40046;
 // ==== navigation bar ===
 .navbar {
     box-shadow: 0 1px 6px rgba(57,73,76,.35);
-    background: #0f3052 !important;
+    background: #131921 !important;
+    // background: #0f3052 !important;
 }
 
 .navbar-brand {
@@ -94,4 +100,42 @@ $color-pink: #e40046;
         color: $color-pink!important;
         font-size: 17px;
     }
+}
+
+
+// === shop item ===
+.shop-card {
+    padding-bottom: 3rem;
+    
+    .shop-media {
+        @include flex-center;
+
+        img{
+            width: 90%;
+            height: auto
+        }
+
+        .sale-badge {
+            color: #fd2136!important;
+            font-weight: 700;
+        }
+    }
+
+    .shop-body {
+
+        .product-name {
+            @include flex-center;
+
+        }
+
+        .product-price {
+            @include flex-center;
+
+        }
+    }
+}
+
+// === Footer === 
+footer {
+    background-color: #131a22;
 }

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import MenuFather from '../UI/Menu/MenuFather';
 import MenuComponent from './MenuComponent';
 
-const SideBar = (props) => {
+const SideBar = () => {
     return (
         <Fragment>
             <MenuFather menuClasses="nav flex-column">
