@@ -2,6 +2,10 @@
 $nav-item-bg: #e40046;
 $color-pink: #e40046;
 
+a {
+    text-decoration: none !important;
+}
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -130,7 +134,9 @@ $color-pink: #e40046;
 
         .product-price {
             @include flex-center;
-
+            color: #969595;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
     }
 }

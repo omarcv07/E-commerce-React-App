@@ -12,7 +12,7 @@ const Kids = (props) => {
         products = props.productsProps.map(product => {
             return (
                 <ProductCard
-                    key={product.key}
+                    key={product.id}
                     productImage={product.img}
                     productName={product.name}
                     productSale={product.sale}

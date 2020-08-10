@@ -9,7 +9,7 @@ const SecondaryLayout = ({ children }) => {
                     <LeftColumn />
                 </div>
                 <div className="col-12 col-md-8 col-lg-9">
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-sm-center justify-content-md-start">
                         {children}
                     </div>
                 </div>

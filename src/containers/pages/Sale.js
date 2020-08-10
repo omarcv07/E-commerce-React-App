@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import EmptyCategoryPage from '../../components/EmptyCategoryPage'
 import ProductCard from '../../components/ProductCard'
 
-const Men = (props) => {
+const Sale = (props) => {
     let products = <EmptyCategoryPage />
 
 
@@ -30,8 +30,8 @@ const Men = (props) => {
 
 const mapStateToProps = state => {
     return {
-        productsProps: state.products.filter(product => product.category === 'men')
+        productsProps: state.products.filter(product => product.sale === true)
     };
 }
 
-export default connect(mapStateToProps)(Men);
+export default connect(mapStateToProps)(Sale);

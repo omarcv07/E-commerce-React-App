@@ -5,11 +5,19 @@ import Home from './components/HomeComponent';
 import Men from './containers/pages/Men';
 import Women from './containers/pages/Women';
 import Kids from './containers/pages/Kids'
+import Sale from './containers/pages/Sale'
 import { Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { toogleSideBar } from './store/actions/actionCreators'
 import './App.scss';
 
 const App = (props) => {
+  // const getSection = () => {
+  //   return {
+  //     component={Home},
+
+  //   }
+  // }
+
   return (
     <div className="App">
 
@@ -21,6 +29,7 @@ const App = (props) => {
           <Route exact path="/men" component={Men} />
           <Route exact path="/women" component={Women} />
           <Route exact path="/kids" component={Kids} />
+          <Route exact path="/sale" component={Sale} />
           <Redirect to="/home" />
         </Switch>
       </MainLayout>
