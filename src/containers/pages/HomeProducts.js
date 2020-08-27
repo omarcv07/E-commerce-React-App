@@ -1,10 +1,9 @@
 import React from 'react';
-import EmptyCategoryPage from './EmptyCategoryPage'
+import EmptyCategoryPage from '../../components/EmptyCategoryPage';
 import { connect } from 'react-redux'; 
-import SecondaryLayout from '../layouts/SecondaryLayout'
-import ProductCard from './ProductCard'
+import ProductCard from '../../components/ProductCard';
 
-const Home = (props) => {
+const HomeProducts = (props) => {
     let products = <EmptyCategoryPage />
 
 
@@ -12,19 +11,26 @@ const Home = (props) => {
         products = props.productsProps.map(product => {
             return (
                 <ProductCard
+                    category={product.category}
                     key={product.id}
                     productImage={product.img}
                     productName={product.name}
                     productSale={product.sale}
                     productPrice={product.price}
+                    productId={product.id}
                 />
             );
         })
     } 
     return (
-        <SecondaryLayout>
-            {products}
-        </SecondaryLayout>
+        <div className="container col-12 col-md-8 col-lg-9">
+            <div className="row justify-content-center">
+                <h2 className="home-products-title">Featured Products</h2>
+            </div>
+            <div className="row">                
+                {products}
+            </div>
+        </div>
     );
 }
 
@@ -35,4 +41,4 @@ const mapStateToProps = state => {
     };
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(HomeProducts);  

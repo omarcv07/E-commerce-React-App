@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductCard = (props) => {
     return (
         <Fragment>
             <div className="col-8 col-lg-4 col-md-6">
-                <a href={`/products/${props.productwithId}`} className="text-dark">
+                <Link to={`/product/${props.productId}`}>
                     <div className="shop-card">
                         <div className="shop-media">
                             <img src={require(`../assets/images/shop_images/${props.productImage}`)} alt={props.productName}/>
@@ -14,13 +15,14 @@ const ProductCard = (props) => {
                         </div>
 
                         <div className="shop-body">
+                            <span className="product-category">{props.category}</span>
                             <span className="product-name">{props.productName}</span>
                             <div>
                                 <span className="product-price">{props.productPrice}$</span>
                             </div>
                         </div>
                     </div>
-                </a>
+                </Link>
             </div>
         </Fragment>
     );

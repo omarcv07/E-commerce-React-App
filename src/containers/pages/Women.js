@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import ProductCard from '../../components/ProductCard'
 import EmptyCategoryPage from '../../components/EmptyCategoryPage'
 
-
 const Women = (props) => {
     let products = <EmptyCategoryPage />
 
@@ -13,11 +12,13 @@ const Women = (props) => {
         products = props.productsProps.map(product => {
             return (
                 <ProductCard
-                    key={product.key}
+                    category={product.category}
+                    key={product.id}
                     productImage={product.img}
                     productName={product.name}
                     productSale={product.sale}
                     productPrice={product.price}
+                    productId={product.id}
                 />
             );
         })

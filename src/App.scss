@@ -1,14 +1,56 @@
 // ==== general styles ====
-$nav-item-bg: #e40046;
+$nav-item-bg: black;
 $color-pink: #e40046;
+$weight-800: 800;
 
-a {
-    text-decoration: none !important;
+.bg-black {
+    background-color: black;
 }
-
 @mixin flex-center {
     display: flex;
     justify-content: center;
+}
+
+@mixin link-style {
+    & {
+        color: #FFFFFF !important;
+        cursor: pointer !important;
+    }
+
+    &:hover {
+        text-decoration-line: underline !important;
+    }
+}
+
+a {
+    color: black;
+    text-decoration: none !important;
+
+    &:hover {
+        color: black;
+    }
+}
+
+
+
+.nav-authentication {
+    font-size: 11px;
+    font-weight: $weight-800;
+
+    a {
+        @include link-style
+    }
+}
+
+.jumbotron {
+    background-image: url('./assets/UI_img/Jumbotron_Image.jpg');
+    background-size: cover;
+    background-position: center center;
+    min-height: 28rem;
+
+    a {
+        @include link-style
+    }
 }
 
 .page-wrapper {
@@ -37,7 +79,7 @@ a {
     z-index: 2050;
 
     .navbar-brand {
-        color: $nav-item-bg !important;
+        color: #FFFFFF !important;
     }
 
     .nav-link {
@@ -62,29 +104,27 @@ a {
 
 // ==== navigation bar ===
 .navbar {
-    box-shadow: 0 1px 6px rgba(57,73,76,.35);
-    background: #131921 !important;
-    // background: #0f3052 !important;
+    background: #FFFFFF !important;
 }
 
 .navbar-brand {
-    color: #fff !important;
+    color: black !important;
     font-weight: 700;
     font-size: 26px;
 }
 
 .nav-link {
-    color: #e2e2e2 !important;
+    color: black !important;
     font-size: 17px;
 }
 
-.navbar-dark .navbar-nav .active>.nav-link, 
-.navbar-dark .navbar-nav .nav-link.active, 
-.navbar-dark .navbar-nav .nav-link.show, 
-.navbar-dark .navbar-nav .show>.nav-link {
-    background: $nav-item-bg;
-    color: #fff !important;
-}
+// .navbar-dark .navbar-nav .active>.nav-link, 
+// .navbar-dark .navbar-nav .nav-link.active, 
+// .navbar-dark .navbar-nav .nav-link.show, 
+// .navbar-dark .navbar-nav .show>.nav-link {
+//     background: $nav-item-bg;
+//     color: #fff !important;
+// }
 
 .nav .nav-item .nav-link.active {
     background-color: $nav-item-bg;
@@ -106,6 +146,9 @@ a {
     }
 }
 
+.home-products-title {
+    letter-spacing: 2px;
+}
 
 // === shop item ===
 .shop-card {
@@ -132,16 +175,37 @@ a {
 
         }
 
+        .product-category {
+            @include flex-center;
+            font-weight: $weight-800;
+            color: black;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
         .product-price {
             @include flex-center;
-            color: #969595;
-            font-weight: 600;
+            color: black;
             font-size: 1.1rem;
         }
     }
 }
 
+// === Parallax ===
+.parallax {
+    background-image: url('./assets/UI_img/parallax_image.jpg');
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    a {
+        @include link-style;
+    }
+}
+
 // === Footer === 
 footer {
-    background-color: #131a22;
 }

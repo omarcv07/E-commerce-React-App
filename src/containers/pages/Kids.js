@@ -12,11 +12,13 @@ const Kids = (props) => {
         products = props.productsProps.map(product => {
             return (
                 <ProductCard
+                    category={product.category}
                     key={product.id}
                     productImage={product.img}
                     productName={product.name}
                     productSale={product.sale}
                     productPrice={product.price}
+                    productId={product.id}
                 />
             );
         })
