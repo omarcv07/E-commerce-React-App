@@ -21,7 +21,6 @@ const Footer = () => {
                                 <li><a href='#'>Privacy policy</a></li>
                             </ul>
                         </div>
-            
                     </div>
                     <div className='col-12 col-md-4'>
                         <h5>About</h5>

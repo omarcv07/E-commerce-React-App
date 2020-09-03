@@ -6,7 +6,7 @@ import Men from './containers/pages/Men';
 import Women from './containers/pages/Women';
 import Kids from './containers/pages/Kids';
 import Sale from './containers/pages/Sale';
-import DetailsProduct from './components/DetailsProduct'
+import ProductDetails from './components/DetailsProduct'
 import { Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { toogleSideBar } from './store/actions/actionCreators';
 import './App.scss';
@@ -24,7 +24,7 @@ const App = (props) => {
           <Route exact path='/women' component={Women} />
           <Route exact path='/kids' component={Kids} />
           <Route exact path='/sale' component={Sale} />
-          <Route exact path='/product/:productId' component={DetailsProduct} />
+          <Route exact path='/product/:productId' component={ProductDetails} />
           <Redirect to='/home' />
         </Switch>
       </MainLayout>
