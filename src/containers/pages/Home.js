@@ -7,12 +7,12 @@ const Home = () => {
     return (
         <Fragment>
             <Jumbotron>
-                <h1 className="text-white">BRAWELS New Season</h1>
-                <a className="text-white"><h2>Shop now</h2></a>
+                <h1 className='text-white'>BRAWELS New Season</h1>
+                <h2><a className='text-white'>Shop now</a></h2>
             </Jumbotron>
             <HomeProducts />
             <Parallax>
-                <a><h1 className="text-white">Shop right now!</h1></a>
+                <h1><a>Shop right now!</a></h1>
             </Parallax>
         </Fragment>
     );

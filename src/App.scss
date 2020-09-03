@@ -48,8 +48,12 @@ a {
     background-position: center center;
     min-height: 28rem;
 
+    h1 {
+        color: white !important;
+    }
+
     a {
-        @include link-style
+        @include link-style;
     }
 }
 
@@ -163,7 +167,7 @@ a {
         }
 
         .sale-badge {
-            color: #fd2136!important;
+            color: gray!important;
             font-weight: 700;
         }
     }
@@ -208,4 +212,17 @@ a {
 
 // === Footer === 
 footer {
+    hr {
+        border-top: 0.1px solid black;
+    }
+
+    ul {
+        text-transform: uppercase; 
+        letter-spacing: 1px; 
+        font-size: 0.8em;
+
+        li {
+            margin: 0 0 10px 0;
+        }
+    }
 }

@@ -3,13 +3,13 @@ import PromoCode from './PromoCode'
 
 const LeftSide = () => {
     return (
-        <div className="left-column-layout py-2 d-none d-md-block container">
+        <div className='left-column-layout py-2 d-none d-md-block container'>
             <PromoCode />
             <div>
                 <h5>Convert Currency</h5>
                 <form>
-                    <div className="form-group">
-                        <select className="form-control">
+                    <div className='form-group'>
+                        <select className='form-control'>
                             <option>USD</option>
                             <option>EUR</option>
                             <option>GBP</option>

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Header from '../components/MenusElement/MainMenu';
 import MainWrapper from '../components/wrappers/MainPageWrapper';
 import ContentWrapper from '../components/wrappers/MainPageWrapper';
-import SideMenuWrapper from "../components/wrappers/SideMenuWrapper";
+import SideMenuWrapper from '../components/wrappers/SideMenuWrapper';
 import SideBar from '../components/MenusElement/SideMenu'
 import Footer from '../components/Footer'
 

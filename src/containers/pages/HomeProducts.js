@@ -23,11 +23,11 @@ const HomeProducts = (props) => {
         })
     } 
     return (
-        <div className="container col-12 col-md-8 col-lg-9">
-            <div className="row justify-content-center">
-                <h2 className="home-products-title">Featured Products</h2>
+        <div className='container col-12 col-md-8 col-lg-9'>
+            <div className='row justify-content-center'>
+                <h2 className='home-products-title'>Featured Products</h2>
             </div>
-            <div className="row">                
+            <div className='row'>                
                 {products}
             </div>
         </div>

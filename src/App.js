@@ -13,19 +13,19 @@ import './App.scss';
 
 const App = (props) => {
   return (
-    <div className="App">
+    <div className='App'>
 
       <MainLayout
         toogleSideBar={props.toogleSideBar}
         showSideNavigation={props.showSideNavigation}>
         <Switch>
-          <Route path="/home" component={Home} />
-          <Route exact path="/men" component={Men} />
-          <Route exact path="/women" component={Women} />
-          <Route exact path="/kids" component={Kids} />
-          <Route exact path="/sale" component={Sale} />
-          <Route exact path="/product/:productId" component={DetailsProduct} />
-          <Redirect to="/home" />
+          <Route path='/home' component={Home} />
+          <Route exact path='/men' component={Men} />
+          <Route exact path='/women' component={Women} />
+          <Route exact path='/kids' component={Kids} />
+          <Route exact path='/sale' component={Sale} />
+          <Route exact path='/product/:productId' component={DetailsProduct} />
+          <Redirect to='/home' />
         </Switch>
       </MainLayout>
 
