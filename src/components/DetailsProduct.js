@@ -25,7 +25,6 @@ const ProductDetails = (props) => {
                     <h5>{products.price}$</h5>
                     <hr />
 
-
                     <button className='btn btn-dark text-white'>Add to Cart</button>
 
                 </div>
