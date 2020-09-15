@@ -124,14 +124,6 @@ a {
     font-size: 17px;
 }
 
-// .navbar-dark .navbar-nav .active>.nav-link, 
-// .navbar-dark .navbar-nav .nav-link.active, 
-// .navbar-dark .navbar-nav .nav-link.show, 
-// .navbar-dark .navbar-nav .show>.nav-link {
-//     background: $nav-item-bg;
-//     color: #fff !important;
-// }
-
 .nav .nav-item .nav-link.active {
     background-color: $nav-item-bg;
     color: #FFFFFF !important;
@@ -143,11 +135,11 @@ a {
     box-shadow: 0px 0px 1px 0px grey;
 
     h5 {
-        color: darkorange;
+        color: black;
     }
 
     .discount {
-        color: $color-pink!important;
+        color: red!important;
         font-size: 17px;
     }
 }
