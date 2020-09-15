@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const MainWrapper = ({ children }) => {
+
     return (    
         <div className="main-wrapper">
             {children}

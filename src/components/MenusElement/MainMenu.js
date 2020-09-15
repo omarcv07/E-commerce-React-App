@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import MenuComponent from './MenuComponent'
 import MenuFather from '../UI/Menu/MenuFather';
 import NavAuthentication from './AuthenticationMenu';
+import logoBrawels from '../../assets/icons/ecommerce-icon.jpeg'
 
 const Header = (props) => {
 
@@ -10,8 +11,8 @@ const Header = (props) => {
             <div className='fixed-top'>
                 <NavAuthentication />
                 <nav className='navbar navbar-expand-md navbar-light p-3'>
-                    <div className='mx-5 container-fluid'>
-                        <span className='navbar-brand' href='/'>Brawels</span>
+                    <div className='mx-md-5 container-fluid'>
+                        <a className='navbar-brand' href='/'><img src={logoBrawels} width={220} /></a>
 
                         <button 
                             className='navbar-toggler'
@@ -32,4 +33,3 @@ const Header = (props) => {
 }
 
 export default Header;
-

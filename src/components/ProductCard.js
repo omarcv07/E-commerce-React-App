@@ -1,7 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductCard = (props) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <Fragment>
             <div className="col-8 col-lg-4 col-md-6">
