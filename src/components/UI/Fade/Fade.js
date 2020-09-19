@@ -1,5 +1,6 @@
 import React from 'react';
 
+// I have not implemented this yet 
 const FadeEffect = (props) => {
     return (
         <div className={`faded ${props.showFade ? 'show' : 'hide'}`}
@@ -9,5 +10,4 @@ const FadeEffect = (props) => {
     );
 }
 
-// I have not implemented this yet 
 export default FadeEffect;
