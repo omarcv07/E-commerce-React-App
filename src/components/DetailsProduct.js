@@ -23,6 +23,8 @@ const ProductDetails = (props) => {
                     <h2>{products.name}</h2>
                     <h4>{products.category}</h4>
                     <h5>{products.price}$</h5>
+                    {products.quantity ? <span className='text-success font-weight-bold'>In Stock: {products.quantity}</span> 
+                        : <span className='font-weight-bold text-danger'>Out of stock</span>}
                     <hr />
 
                     <button className='btn btn-dark text-white'>Add to Cart</button>
