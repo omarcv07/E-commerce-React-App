@@ -1,9 +1,7 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
-    isLoading: false,
-    errMess: null,
-    element: [],
+    quantity: 0,
     showSideNavigation: false,
     ProductCode: [
         {

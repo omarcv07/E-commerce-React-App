@@ -9,7 +9,7 @@ const Footer = () => {
                         <h5>Customer Care</h5>
                         <hr className='my-3' />
                         <div>
-                            <ul class='list-unstyled'>
+                            <ul className='list-unstyled'>
                                 <li><a href='#'>Contact us</a></li>
                                 <li><a href='#'>Faqs</a></li>
                                 <li><a href='#'>Store location</a></li>
@@ -25,7 +25,7 @@ const Footer = () => {
                     <div className='col-12 col-md-4'>
                         <h5>About</h5>
                         <hr className='my-3' />
-                        <p>
+                        <div>
                             <p>Curators of ethical fashion and New Zealand designed.</p>
 
                             <p>Brawels is a destination for style seekers. Located in Masterton's boutique Kuripuni Village, Brawels is lovingly and carefully curated by Owner and Buyer, Dani Burkhart. Dedicated to NZ designed, ethical fashion and accessories- Brawels is a beautiful style edit.</p>
@@ -35,7 +35,7 @@ const Footer = () => {
                             <p>Feel inspired exploring a beautifully designed space that reflects a love for styling and creating. Style tips await from a small, warm team who adore fashion- the current, the classic and the refined.</p>
 
                             <p>A truly authentic element of the store, Owner Dani Burkhart, produces in-house clothing label My Boyfriends Back from Brawels, for Brawels. Shoppers can order different colours in signature styles, and select from seasonal pieces available instore. MBB is designed using surplus fabric stocks and is made in Auckland, NZ. </p>
-                        </p>
+                        </div>
                     </div>
                     <div className='col-12 col-md-4'>
                         <h5>Newsletter</h5>

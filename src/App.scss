@@ -3,6 +3,11 @@ $nav-item-bg: black;
 $color-pink: #e40046;
 $weight-800: 800;
 
+.orange-color {
+    color: #eeb50b !important;
+    cursor: pointer;
+}
+
 .bg-black {
     background-color: black;
 }
@@ -120,6 +125,8 @@ a {
 }
 
 .nav-link {
+    position: relative;
+    transition: clip-path 275ms ease;
     color: black !important;
     font-size: 17px;
 }
@@ -127,6 +134,23 @@ a {
 .nav .nav-item .nav-link.active {
     background-color: $nav-item-bg;
     color: #FFFFFF !important;
+}
+
+.nav-link:hover span::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.nav-link span {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-link span::before {
+    position: absolute;
+    content: attr(data-content);
+    border-bottom: 4px solid black;
+    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+    transition: clip-path 275ms ease;
 }
 
 // === left column === 
