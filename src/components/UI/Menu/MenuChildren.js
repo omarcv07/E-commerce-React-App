@@ -7,7 +7,7 @@ const MenuItem = ({ linkTo, children }) => {
             <NavLink
                 className='nav-link'
                 to={linkTo}>
-                <span data-content={children}>{children}</span>
+                {children}
             </NavLink>
         </li>
     )

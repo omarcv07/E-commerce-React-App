@@ -136,22 +136,22 @@ a {
     color: #FFFFFF !important;
 }
 
-.nav-link:hover span::before {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
+// .nav-link:hover span::before {
+//     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+// }
 
-.nav-link span {
-    position: relative;
-    display: inline-block;
-}
+// .nav-link span {
+//     position: relative;
+//     display: inline-block;
+// }
 
-.nav-link span::before {
-    position: absolute;
-    content: attr(data-content);
-    border-bottom: 4px solid black;
-    clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
-    transition: clip-path 275ms ease;
-}
+// .nav-link span::before {
+//     position: absolute;
+//     content: attr(data-content);
+//     border-bottom: 4px solid black;
+//     clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+//     transition: clip-path 275ms ease;
+// }
 
 // === left column === 
 .left-column-layout {

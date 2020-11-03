@@ -1,7 +1,8 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
-    quantity: 0,
+    addedProducts: [],
+    total: 0,
     showSideNavigation: false,
     ProductCode: [
         {
@@ -23,7 +24,7 @@ const initialState = {
             subcategory: '',
             sale: true,
             article: 'watch',
-            quantity: 5,
+            stock: 5,
             img: 'analog-quartz-watch.jpg',
         },
         {
@@ -35,7 +36,7 @@ const initialState = {
             subcategory: '',
             sale: false,
             article: 'handbag',
-            quantity: 8,
+            stock: 8,
             img: 'singedani-handbag.jpg'
         },
         {
@@ -47,7 +48,7 @@ const initialState = {
             subcategory: 'boys',
             sale: true,
             article: 'boxer',
-            quantity: 3,
+            stock: 3,
             img: 'boy_boxers.jpg'
         },
         {
@@ -59,7 +60,7 @@ const initialState = {
             subcategory: '',
             sale: false,
             article: 'belt',
-            quantity: 10,
+            stock: 10,
             img: 'belt.jpg'
         },
         {
@@ -71,7 +72,7 @@ const initialState = {
             subcategory: '',
             sale: true,
             article: 'dress',
-            quantity: 0,
+            stock: 0,
             img: 'vintage-flare-dress.jpg'
         },
         {
@@ -83,7 +84,7 @@ const initialState = {
             subcategory: 'girls',
             sale: true,
             article: 'dress',
-            quantity: 2,
+            stock: 2,
             img: 'cotton-dress.jpg'
         },
         {
@@ -95,7 +96,7 @@ const initialState = {
             subcategory: '',
             sale: false,
             article: 'shoes',
-            quantity: 6,
+            stock: 6,
             img: 'gemch_shoes.jpg'
         },
         {
@@ -107,7 +108,7 @@ const initialState = {
             subcategory: '',
             sale: true,
             article: 'dress',
-            quantity: 10,
+            stock: 10,
             img: 'floral-dress.jpg'
         },
         {
@@ -119,7 +120,7 @@ const initialState = {
             subcategory: 'girls',
             sale: false,
             article: 'dress',
-            quantity: 9,
+            stock: 9,
             img: 'leather-shoes.jpg'
         },
         {
@@ -131,7 +132,7 @@ const initialState = {
             subcategory: '',
             sale: false,
             article: 'shoes',
-            quantity: 0,
+            stock: 0,
             img: 'gsoft-khaki.jpg'
         },
         {
@@ -143,7 +144,7 @@ const initialState = {
             subcategory: '',
             sale: false,
             article: 'dress',
-            quantity: 7,
+            stock: 7,
             img: 'bodycon-dress.jpg'
         },
         {
@@ -155,7 +156,7 @@ const initialState = {
             subcategory: 'girls',
             sale: true,
             article: 'dress',
-            quantity: 4,
+            stock: 4,
             img: 'princes-dress.jpg'
         },
         {
@@ -167,7 +168,7 @@ const initialState = {
             subcategory: '',
             sale: true,
             article: 'suit',
-            quantity: 3,
+            stock: 3,
             img: 'slim-fit-suit.jpg'
         },
         {
@@ -179,7 +180,7 @@ const initialState = {
             subcategory: '',
             sale: true,
             article: 'sandals',
-            quantity: 2,
+            stock: 2,
             img: 'gladiator-flat-flip.jpg'
         },
         {
@@ -191,7 +192,7 @@ const initialState = {
             subcategory: 'boys',
             sale: false,
             article: 'dress',
-            quantity: 0,
+            stock: 0,
             img: 'boys-t-shirt.jpg'
         },
         {
@@ -203,7 +204,7 @@ const initialState = {
             subcategory: '',
             sale: true,
             article: 'suit',
-            quantity: 8,
+            stock: 8,
             img: 'vest.jpg'
         },
         {
@@ -215,7 +216,7 @@ const initialState = {
             subcategory: '',
             sale: true,
             article: 'watch',
-            quantity: 4,
+            stock: 4,
             img: 'quartz-wrist-watch.jpg'
         },
         {
@@ -227,13 +228,18 @@ const initialState = {
             subcategory: 'boys',
             sale: true,
             article: 'dress',
-            quantity: 7,
+            stock: 7,
             img: 'crew-neck-tshirt.jpg'
         },
     ]
 }
 
 const reducer = (state = initialState, action) => {
+    let updatedCart;
+    let updatedProductIndex;
+    let newTotal;
+    let newProductQuantity;
+
     switch (action.type) {
 
         case actionTypes.TOGGLE_SIDE_BAR:
@@ -242,6 +248,97 @@ const reducer = (state = initialState, action) => {
                 showSideNavigation: !state.showSideNavigation
             };
         
+        case actionTypes.ADD_TO_CART: 
+            let addedProduct = state.products.find(item => item.id === action.payload);
+            let existentProduct = state.addedProducts.find((item) => item.id === action.payload);
+
+            if (existentProduct) {
+                addedProduct.quantity += 1;
+                return {
+                    ...state,
+                    addedProducts: [...state.addedProducts],
+                    total: state.total + addedProduct.price
+                }
+            } else {
+                addedProduct.quantity = 1;;
+                newTotal = state.total + addedProduct.price;
+
+                return {
+                    ...state, 
+                    addedProducts: [...state.addedProducts, addedProduct],
+                    total: newTotal
+                }
+            }
+
+        case actionTypes.DELETE_FROM_CART:
+            let productToRemove = state.addedProducts.find(item => item.id === action.payload);
+            let newProducts = state.addedProducts.filter(item => item.id !== action.payload);
+            newTotal = state.total - (productToRemove.price * productToRemove.quantity);
+            
+            console.log(productToRemove);
+
+            return {
+                ...state, 
+                addedProducts: newProducts,
+                total: newTotal
+            }
+
+        case actionTypes.ADD_QUANTITY:
+            updatedCart = [...state.addedProducts];
+            updatedProductIndex = updatedCart.findIndex(product => product.id === action.payload);
+
+            const incrementedProduct = {
+                ...updatedCart[updatedProductIndex]
+            };
+
+            console.log(incrementedProduct)
+
+            incrementedProduct.quantity += 1;
+            newProductQuantity = incrementedProduct.quantity;
+
+            if (newProductQuantity <= incrementedProduct.stock) {
+                updatedCart[updatedProductIndex] = incrementedProduct;
+                newTotal = state.total + incrementedProduct.price;
+
+                return {
+                    ...state,
+                    addedProducts: updatedCart,
+                    total: newTotal
+                }
+            } else {
+                return {
+                    ...state
+                }
+            }
+
+        case actionTypes.SUB_QUANTITY:
+            updatedCart = [...state.addedProducts];
+            updatedProductIndex = updatedCart.findIndex(product => product.id === action.payload);
+
+            const decrementedProduct = {
+                ...updatedCart[updatedProductIndex]
+            };
+
+            console.log(updatedCart)
+
+            decrementedProduct.quantity -= 1;
+            newProductQuantity = decrementedProduct.quantity;
+
+            if (newProductQuantity < 1) {
+                return {
+                    ...state
+                }
+            } else {
+                updatedCart[updatedProductIndex] = decrementedProduct;
+                newTotal = state.total - decrementedProduct.price;
+    
+                return {
+                    ...state,
+                    addedProducts: updatedCart,
+                    total: newTotal
+                }
+            }
+
         default:
             return {
                 ...state

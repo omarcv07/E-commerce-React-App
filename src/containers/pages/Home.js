@@ -8,11 +8,11 @@ const Home = () => {
         <Fragment>
             <Jumbotron>
                 <h1 className='text-white'>BRAWELS New Season</h1>
-                <h2><a className='text-white'>Shop now</a></h2>
+                <h2><a className='text-white' href='/'>Shop now</a></h2>
             </Jumbotron>
             <HomeProducts />
             <Parallax>
-                <h1><a>Shop right now!</a></h1>
+                <h1><a href='/'>Shop right now!</a></h1>
             </Parallax>
         </Fragment>
     );

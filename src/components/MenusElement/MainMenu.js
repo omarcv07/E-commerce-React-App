@@ -12,7 +12,7 @@ const Header = (props) => {
                 <NavAuthentication />
                 <nav className='navbar navbar-expand-md navbar-light p-3'>
                     <div className='mx-md-5 container-fluid'>
-                        <a className='navbar-brand' href='/'><img src={logoBrawels} width={220} /></a>
+                        <a className='navbar-brand' href='/'><img src={logoBrawels} width={220} alt='logo'/></a>
 
                         <button 
                             className='navbar-toggler'
