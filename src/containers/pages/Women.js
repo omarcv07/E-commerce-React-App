@@ -5,11 +5,15 @@ import ProductCard from '../../components/ProductCard'
 import EmptyCategoryPage from '../../components/EmptyCategoryPage'
 
 const Women = (props) => {
+    
+    const { productsProps } = props;
+
     let products = <EmptyCategoryPage />
 
+    if (productsProps) {
+        const womenProducts = productsProps.filter(product => product.category === 'women');
 
-    if (props.productsProps.length > 0) {
-        products = props.productsProps.map(product => {
+        products = womenProducts.map(product => {
             return (
                 <ProductCard
                     category={product.category}
@@ -32,7 +36,7 @@ const Women = (props) => {
 
 const mapStateToProps = state => {
     return {
-        productsProps: state.products.filter(product => product.category === 'women')
+        productsProps: state.products
     };
 }
 

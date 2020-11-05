@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
 import MainLayout from './layouts/MainLayout';
 import Home from './containers/pages/Home';
@@ -9,10 +9,20 @@ import Sale from './containers/pages/Sale';
 import Cart from './containers/pages/Cart';
 import ProductDetails from './components/DetailsProduct'
 import { Switch, Route, Redirect, withRouter} from 'react-router-dom';
-import { toogleSideBar } from './store/actions/actionCreators';
+import { toogleSideBar, fetchProducts } from './store/actions/actionCreators';
 import './App.scss';
 
 const App = (props) => {
+
+  const { fetchProducts } = props;
+
+  useEffect(
+    _ => {
+      fetchProducts()
+    },
+    []
+  )
+
   return (
     <div className='App'>
 
@@ -37,13 +47,14 @@ const App = (props) => {
 
 const mapStateToProps = state => {
   return {
-    showSideNavigation: state.showSideNavigation
+    showSideNavigation: state.showSideNavigation,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    toogleSideBar: () => dispatch(toogleSideBar())
+    toogleSideBar: () => dispatch(toogleSideBar()),
+    fetchProducts: () => dispatch(fetchProducts())
   }
 };
 

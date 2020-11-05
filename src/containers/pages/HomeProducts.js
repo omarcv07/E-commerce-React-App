@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import ProductCard from '../../components/ProductCard';
 
 const HomeProducts = (props) => {
+
+    const { productsProps } = props;
+
     let products = <EmptyCategoryPage />
 
-
-    if (props.productsProps.length > 0) {
+    if (productsProps) {
         products = props.productsProps.map(product => {
             return (
                 <ProductCard

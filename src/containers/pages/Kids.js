@@ -5,11 +5,15 @@ import SecondaryLayout from '../../layouts/SecondaryLayout'
 import ProductCard from '../../components/ProductCard'
 
 const Kids = (props) => {
+
+    const { productsProps } = props;
+
     let products = <EmptyCategoryPage />
 
+    if (productsProps) {
+        const kidsProducts = productsProps.filter(product => product.category === 'kids');
 
-    if (props.productsProps.length > 0) {
-        products = props.productsProps.map(product => {
+        products = kidsProducts.map(product => {
             return (
                 <ProductCard
                     category={product.category}
@@ -32,7 +36,7 @@ const Kids = (props) => {
 
 const mapStateToProps = state => {
     return {
-        productsProps: state.products.filter(product => product.category === 'kids')
+        productsProps: state.products
     }
 }
 
